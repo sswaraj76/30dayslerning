@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
           accentColor: Colors.amber,
           fontFamily: GoogleFonts.walterTurncoat().fontFamily),
       //home: HomePage(),
+      initialRoute: MyRoutesName.home,
       routes: {
         '/': (context) => LogIn(),
         MyRoutesName.home: (context) => HomePage()

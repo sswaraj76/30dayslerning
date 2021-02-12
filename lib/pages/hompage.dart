@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widget/drawer.dart';
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -8,7 +10,7 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: Text('hello world'),
       ),
-      drawer: Drawer(),
+      drawer: MyDrawer(),
     );
   }
 }

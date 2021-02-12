@@ -114,16 +114,6 @@ class _LogInState extends State<LogIn> {
                           ),
                         ),
                       )
-
-                      // ElevatedButton(
-                      //   onPressed: () {
-                      //
-                      //   },
-                      //   child: Text(
-                      //     'Log In',
-                      //   ),
-                      //   style: TextButton.styleFrom(minimumSize: Size(140, 50)),
-                      // )
                     ],
                   ),
                 )
