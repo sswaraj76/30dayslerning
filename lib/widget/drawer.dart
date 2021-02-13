@@ -21,24 +21,30 @@ class MyDrawer extends StatelessWidget {
                   ),
                 )),
             ListTile(
-              leading: Icon(Icons.home),
+              leading: Icon(Icons.home, color: Colors.white),
               title: Text(
                 'Home',
                 textScaleFactor: 1.5,
+                style: TextStyle(color: Colors.white),
               ),
             ),
             ListTile(
-              leading: Icon(Icons.account_circle),
+              leading: Icon(
+                Icons.account_circle,
+                color: Colors.white,
+              ),
               title: Text(
                 'My account',
                 textScaleFactor: 1.5,
+                style: TextStyle(color: Colors.white),
               ),
             ),
             ListTile(
-              leading: Icon(Icons.mail),
+              leading: Icon(Icons.mail, color: Colors.white),
               title: Text(
                 'Mail',
                 textScaleFactor: 1.5,
+                style: TextStyle(color: Colors.white),
               ),
             ),
           ],
