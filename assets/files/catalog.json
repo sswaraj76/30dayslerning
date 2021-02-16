@@ -1,0 +1,44 @@
+{
+    "products":[
+        {
+            "id": "01",
+            "name": "iPhone 12",
+            "desc": "5G Enabled Phone",
+            "price": 59999,
+            "color": "#FFA500",
+            "image":"https://rukminim1.flixcart.com/image/832/832/kg8avm80/mobile/r/h/z/apple-iphone-12-dummyapplefsn-original-imafwg8dqgncgbcb.jpeg?q=70"
+        },
+        {
+            "id": "02",
+            "name": "Nokia 5.4",
+            "desc": "4 GB RAM | 64 GB ROM | Expandable Upto 512 GB",
+            "price": 13999,
+            "color": "#FFD700",
+            "image":"https://rukminim1.flixcart.com/image/832/832/kkwwu4w0/mobile/s/t/7/5-4-hq5020m517000-nokia-original-imagy5bqmghczguz.jpeg?q=70"
+        },
+        {
+            "id": "03",
+            "name": "Redmi 9 Prime (Mint Green, 64 GB)",
+            "desc": "MediaTek Helio G80 Processor",
+            "price": 9999,
+            "color": "#DAF7A6",
+            "image":"https://rukminim1.flixcart.com/image/832/832/ke0a7ww0/mobile/4/r/e/mi-redmi-9-prime-m2004j191-original-imafushhfhy3tbp9.jpeg?q=70"  
+        },
+        {
+            "id": "04",
+            "name": "POCO M3 (Cool Blue, 128 GB)",
+            "desc": "Qualcomm Snapdragon 662 Processor",
+            "price": 11999,
+            "color": "#C70039",
+            "image":"https://rukminim1.flixcart.com/image/832/832/kklhbbk0/mobile/n/1/a/m3-mzb087ain-poco-original-imafzxf8vnm7x8wk.jpeg?q=70"
+        },
+        {
+            "id": "05",
+            "name": "Moto G 5G (Volcanic Grey, 128 GB)",
+            "desc": "Qualcomm Snapdragon 750G Processor",
+            "price": 20999,
+            "color": "#00FFA4",
+            "image":"https://rukminim1.flixcart.com/image/832/832/khz693k0/mobile/r/w/x/motorola-g-5g-palm0007in-original-imafxvpfpzyqjdt9.jpeg?q=70"
+        }
+    ]
+}
