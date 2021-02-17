@@ -11,15 +11,17 @@ class ItemWidgets extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(14.0),
-      child: ListTile(
-        leading: Image.network(items.image),
-        title: Text(items.name),
-        subtitle: Text(items.desc),
-        trailing: Text(
-          "₹${items.price.toString()}",
-          style: TextStyle(fontWeight: FontWeight.bold),
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListTile(
+          leading: Image.network(items.image),
+          title: Text(items.name),
+          subtitle: Text(items.desc),
+          trailing: Text(
+            "₹${items.price.toString()}",
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
         ),
       ),
     );
