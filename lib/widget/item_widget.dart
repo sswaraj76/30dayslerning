@@ -1,4 +1,6 @@
+import 'package:codepur/widget/themes.dart';
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 import '../models/products.dart';
 
@@ -11,19 +13,37 @@ class ItemWidgets extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: ListTile(
-          leading: Image.network(items.image),
-          title: Text(items.name),
-          subtitle: Text(items.desc),
-          trailing: Text(
-            "₹${items.price.toString()}",
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-        ),
-      ),
-    );
+    return VxBox(
+        child: Row(
+      children: [
+        Image.network(
+          items.image,
+          fit: BoxFit.contain,
+        ).box.roundedSM.p8.color(MyTheme.creamcolor).make().p16().w40(context),
+        Expanded(
+            child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            items.name.text.bold.sm.make(),
+            items.desc.text.textStyle(context.captionStyle).make(),
+            ButtonBar(
+              alignment: MainAxisAlignment.spaceBetween,
+              buttonPadding: Vx.mH8,
+              children: [
+                '₹ ${items.price.toString()}'.text.bold.make(),
+                ElevatedButton(
+                    onPressed: () {},
+                    style: ButtonStyle(
+                        shape: MaterialStateProperty.all(StadiumBorder()),
+                        backgroundColor:
+                            MaterialStateProperty.all(MyTheme.darkCream)),
+                    child: 'Buy'.text.make())
+              ],
+            )
+          ],
+        ))
+      ],
+    )).white.square(150).rounded.make().py8();
   }
 }

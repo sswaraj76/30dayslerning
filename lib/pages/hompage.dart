@@ -1,7 +1,9 @@
 import 'dart:convert';
 
+import 'package:codepur/widget/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 import '../widget/drawer.dart';
 import '../widget/item_widget.dart';
@@ -20,7 +22,6 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async {
-    //await Future.delayed(Duration(seconds: 5));
     var catalogJson = await rootBundle.loadString("assets/files/catalog.json");
     final jsonDecoded = jsonDecode(catalogJson);
     var productsData = jsonDecoded["products"];
@@ -32,25 +33,58 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // final List dummyList = List.generate(10, (index) => CatalogModel.items[0]);
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text('Box'),
+      backgroundColor: MyTheme.creamcolor,
+      body: SafeArea(
+        child: Container(
+          padding: Vx.m32,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              MyTitle(),
+              SizedBox(
+                height: 10,
+              ),
+              if (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
+                CatalogList().expand()
+              else
+                Center(
+                  child: CircularProgressIndicator(),
+                )
+            ],
+          ),
+        ),
       ),
-      body: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
-          ? ListView.builder(
-              itemBuilder: (context, index) {
-                return ItemWidgets(
-                  items: CatalogModel.items[index],
-                );
-              },
-              itemCount: CatalogModel.items.length,
-            )
-          : Center(
-              child: CircularProgressIndicator(),
-            ),
       drawer: MyDrawer(),
+    );
+  }
+}
+
+class MyTitle extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        'Catalog App'.text.xl5.bold.color(MyTheme.darkCream).make(),
+        SizedBox(
+          height: 10,
+        ),
+        'Treanding Products'.text.color(MyTheme.darkCream).xl2.make(),
+      ],
+    );
+  }
+}
+
+class CatalogList extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      shrinkWrap: true,
+      itemCount: CatalogModel.items.length,
+      itemBuilder: (context, index) {
+        return ItemWidgets(items: CatalogModel.items[index]);
+      },
     );
   }
 }

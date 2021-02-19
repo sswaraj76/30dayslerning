@@ -5,7 +5,7 @@ class MyTheme {
   static ThemeData lightTheme(BuildContext context) => ThemeData(
       primaryColor: Colors.purpleAccent,
       accentColor: Colors.amber,
-      fontFamily: GoogleFonts.walterTurncoat().fontFamily,
+      fontFamily: GoogleFonts.poppins().fontFamily,
       appBarTheme: AppBarTheme(
         color: Colors.white,
         elevation: 0.0,
@@ -15,4 +15,7 @@ class MyTheme {
 
   static ThemeData darkTheme(BuildContext context) =>
       ThemeData(brightness: Brightness.dark);
+
+  static Color creamcolor = Color(0xfffff3e0);
+  static Color darkCream = Color(0xff725b53);
 }
